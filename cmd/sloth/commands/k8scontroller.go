@@ -30,12 +30,12 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/util/homedir"
 
-	"github.com/slok/sloth/internal/alert"
-	"github.com/slok/sloth/internal/app/generate"
-	"github.com/slok/sloth/internal/app/kubecontroller"
-	"github.com/slok/sloth/internal/k8sprometheus"
-	"github.com/slok/sloth/internal/log"
-	"github.com/slok/sloth/internal/prometheus"
+	"github.com/slok/sloth/core/alert"
+	"github.com/slok/sloth/core/app/generate"
+	"github.com/slok/sloth/core/app/kubecontroller"
+	"github.com/slok/sloth/core/k8sprometheus"
+	"github.com/slok/sloth/core/log"
+	"github.com/slok/sloth/core/prometheus"
 	slothv1 "github.com/slok/sloth/pkg/kubernetes/api/sloth/v1"
 	slothclientset "github.com/slok/sloth/pkg/kubernetes/gen/clientset/versioned"
 )
