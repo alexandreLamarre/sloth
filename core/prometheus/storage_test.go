@@ -8,8 +8,8 @@ import (
 	"github.com/prometheus/prometheus/model/rulefmt"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/slok/sloth/core/log"
-	"github.com/slok/sloth/core/prometheus"
+	"github.com/alexandreLamarre/core/log"
+	"github.com/alexandreLamarre/core/prometheus"
 )
 
 func TestIOWriterGroupedRulesYAMLRepoStore(t *testing.T) {

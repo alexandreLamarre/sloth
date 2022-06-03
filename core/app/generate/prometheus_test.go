@@ -9,10 +9,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/slok/sloth/core/alert"
-	"github.com/slok/sloth/core/app/generate"
-	"github.com/slok/sloth/core/info"
-	"github.com/slok/sloth/core/prometheus"
+	"github.com/alexandreLamarre/core/alert"
+	"github.com/alexandreLamarre/core/app/generate"
+	"github.com/alexandreLamarre/core/info"
+	"github.com/alexandreLamarre/core/prometheus"
 )
 
 func TestIntegrationAppServiceGenerate(t *testing.T) {

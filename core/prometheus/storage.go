@@ -9,8 +9,8 @@ import (
 	"github.com/prometheus/prometheus/model/rulefmt"
 	"gopkg.in/yaml.v2"
 
-	"github.com/slok/sloth/core/info"
-	"github.com/slok/sloth/core/log"
+	"github.com/alexandreLamarre/core/info"
+	"github.com/alexandreLamarre/core/log"
 )
 
 var (

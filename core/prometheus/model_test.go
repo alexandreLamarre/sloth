@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/slok/sloth/core/prometheus"
+	"github.com/alexandreLamarre/core/prometheus"
 )
 
 func getGoodSLOGroup() prometheus.SLOGroup {

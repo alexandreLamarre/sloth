@@ -12,11 +12,11 @@ import (
 	prometheusmodel "github.com/prometheus/common/model"
 	"gopkg.in/alecthomas/kingpin.v2"
 
-	"github.com/slok/sloth/core/alert"
-	"github.com/slok/sloth/core/k8sprometheus"
-	"github.com/slok/sloth/core/log"
-	"github.com/slok/sloth/core/openslo"
-	"github.com/slok/sloth/core/prometheus"
+	"github.com/alexandreLamarre/core/alert"
+	"github.com/alexandreLamarre/core/k8sprometheus"
+	"github.com/alexandreLamarre/core/log"
+	"github.com/alexandreLamarre/core/openslo"
+	"github.com/alexandreLamarre/core/prometheus"
 )
 
 type validateCommand struct {

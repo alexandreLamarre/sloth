@@ -8,8 +8,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/slok/sloth/core/k8sprometheus"
-	"github.com/slok/sloth/core/prometheus"
+	"github.com/alexandreLamarre/core/k8sprometheus"
+	"github.com/alexandreLamarre/core/prometheus"
 )
 
 type testMemPluginsRepo map[string]prometheus.SLIPlugin

@@ -6,7 +6,7 @@ import (
 
 	"gopkg.in/alecthomas/kingpin.v2"
 
-	"github.com/slok/sloth/core/log"
+	"github.com/alexandreLamarre/core/log"
 )
 
 const (

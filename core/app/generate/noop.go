@@ -3,10 +3,10 @@ package generate
 import (
 	"context"
 
+	"github.com/alexandreLamarre/core/alert"
+	"github.com/alexandreLamarre/core/info"
+	"github.com/alexandreLamarre/core/prometheus"
 	"github.com/prometheus/prometheus/model/rulefmt"
-	"github.com/slok/sloth/core/alert"
-	"github.com/slok/sloth/core/info"
-	"github.com/slok/sloth/core/prometheus"
 )
 
 type noopSLIRecordingRulesGenerator bool

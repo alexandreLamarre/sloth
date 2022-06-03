@@ -6,10 +6,10 @@ import (
 
 	"github.com/prometheus/prometheus/model/rulefmt"
 
-	"github.com/slok/sloth/core/alert"
-	"github.com/slok/sloth/core/info"
-	"github.com/slok/sloth/core/log"
-	"github.com/slok/sloth/core/prometheus"
+	"github.com/alexandreLamarre/core/alert"
+	"github.com/alexandreLamarre/core/info"
+	"github.com/alexandreLamarre/core/log"
+	"github.com/alexandreLamarre/core/prometheus"
 )
 
 // ServiceConfig is the application service configuration.

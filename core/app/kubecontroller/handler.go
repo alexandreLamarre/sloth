@@ -8,11 +8,11 @@ import (
 	"github.com/spotahome/kooper/v2/controller"
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/slok/sloth/core/app/generate"
-	"github.com/slok/sloth/core/info"
-	"github.com/slok/sloth/core/k8sprometheus"
-	"github.com/slok/sloth/core/log"
-	slothv1 "github.com/slok/sloth/pkg/kubernetes/api/sloth/v1"
+	"github.com/alexandreLamarre/core/app/generate"
+	"github.com/alexandreLamarre/core/info"
+	"github.com/alexandreLamarre/core/k8sprometheus"
+	"github.com/alexandreLamarre/core/log"
+	slothv1 "github.com/alexandreLamarre/pkg/kubernetes/api/sloth/v1"
 )
 
 // SpecLoader Knows how to load a Kubernetes Spec into an app model.

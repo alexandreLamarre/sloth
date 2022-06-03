@@ -8,8 +8,8 @@ import (
 	"github.com/prometheus/prometheus/model/rulefmt"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/slok/sloth/core/alert"
-	"github.com/slok/sloth/core/prometheus"
+	"github.com/alexandreLamarre/core/alert"
+	"github.com/alexandreLamarre/core/prometheus"
 )
 
 func getSLOAlertGroup() alert.MWMBAlertGroup {

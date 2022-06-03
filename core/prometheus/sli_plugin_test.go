@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/slok/sloth/core/prometheus"
-	"github.com/slok/sloth/core/prometheus/prometheusmock"
+	"github.com/alexandreLamarre/core/prometheus"
+	"github.com/alexandreLamarre/core/prometheus/prometheusmock"
 )
 
 func TestSLIPluginLoader(t *testing.T) {

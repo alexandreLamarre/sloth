@@ -8,10 +8,10 @@ import (
 
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/slok/sloth/core/prometheus"
-	k8sprometheusv1 "github.com/slok/sloth/pkg/kubernetes/api/sloth/v1"
-	"github.com/slok/sloth/pkg/kubernetes/gen/clientset/versioned/scheme"
-	prometheuspluginv1 "github.com/slok/sloth/pkg/prometheus/plugin/v1"
+	"github.com/alexandreLamarre/core/prometheus"
+	k8sprometheusv1 "github.com/alexandreLamarre/pkg/kubernetes/api/sloth/v1"
+	"github.com/alexandreLamarre/pkg/kubernetes/gen/clientset/versioned/scheme"
+	prometheuspluginv1 "github.com/alexandreLamarre/pkg/prometheus/plugin/v1"
 )
 
 type SLIPluginRepo interface {

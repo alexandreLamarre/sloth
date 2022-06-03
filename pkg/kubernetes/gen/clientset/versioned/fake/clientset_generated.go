@@ -3,9 +3,9 @@
 package fake
 
 import (
-	clientset "github.com/slok/sloth/pkg/kubernetes/gen/clientset/versioned"
-	slothv1 "github.com/slok/sloth/pkg/kubernetes/gen/clientset/versioned/typed/sloth/v1"
-	fakeslothv1 "github.com/slok/sloth/pkg/kubernetes/gen/clientset/versioned/typed/sloth/v1/fake"
+	clientset "github.com/alexandreLamarre/pkg/kubernetes/gen/clientset/versioned"
+	slothv1 "github.com/alexandreLamarre/pkg/kubernetes/gen/clientset/versioned/typed/sloth/v1"
+	fakeslothv1 "github.com/alexandreLamarre/pkg/kubernetes/gen/clientset/versioned/typed/sloth/v1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"
