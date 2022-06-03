@@ -1,4 +1,4 @@
-module github.com/slok/sloth
+module github.com/alexandreLamarre/sloth
 
 go 1.18
 
