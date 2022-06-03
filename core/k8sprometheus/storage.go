@@ -14,9 +14,9 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/util/intstr"
 
-	"github.com/alexandreLamarre/core/info"
-	"github.com/alexandreLamarre/core/log"
-	"github.com/alexandreLamarre/core/prometheus"
+	"github.com/alexandreLamarre/sloth/core/info"
+	"github.com/alexandreLamarre/sloth/core/log"
+	"github.com/alexandreLamarre/sloth/core/prometheus"
 )
 
 var (

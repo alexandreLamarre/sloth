@@ -10,7 +10,7 @@ import (
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/tools/cache"
 
-	slothv1 "github.com/alexandreLamarre/pkg/kubernetes/api/sloth/v1"
+	slothv1 "github.com/alexandreLamarre/sloth/pkg/kubernetes/api/sloth/v1"
 )
 
 // RetrieverKubernetesRepository is the service to manage k8s resources by the Kubernetes controller retrievers.

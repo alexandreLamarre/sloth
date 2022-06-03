@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"testing"
 
-	"github.com/alexandreLamarre/test/integration/testutils"
+	"github.com/alexandreLamarre/sloth/test/integration/testutils"
 )
 
 type Config struct {

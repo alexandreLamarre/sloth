@@ -3,7 +3,7 @@ package k8sprometheus
 import (
 	"github.com/go-playground/validator/v10"
 
-	"github.com/alexandreLamarre/core/prometheus"
+	"github.com/alexandreLamarre/sloth/core/prometheus"
 )
 
 // K8sMeta is the Kubernetes metadata simplified.

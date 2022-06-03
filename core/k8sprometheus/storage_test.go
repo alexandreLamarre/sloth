@@ -14,10 +14,10 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/util/intstr"
 
-	"github.com/alexandreLamarre/core/k8sprometheus"
-	"github.com/alexandreLamarre/core/k8sprometheus/k8sprometheusmock"
-	"github.com/alexandreLamarre/core/log"
-	"github.com/alexandreLamarre/core/prometheus"
+	"github.com/alexandreLamarre/sloth/core/k8sprometheus"
+	"github.com/alexandreLamarre/sloth/core/k8sprometheus/k8sprometheusmock"
+	"github.com/alexandreLamarre/sloth/core/log"
+	"github.com/alexandreLamarre/sloth/core/prometheus"
 )
 
 func TestIOWriterPrometheusOperatorYAMLRepo(t *testing.T) {

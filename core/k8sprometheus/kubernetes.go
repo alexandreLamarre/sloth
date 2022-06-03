@@ -12,10 +12,10 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 
-	"github.com/alexandreLamarre/core/log"
-	slothv1 "github.com/alexandreLamarre/pkg/kubernetes/api/sloth/v1"
-	slothclientset "github.com/alexandreLamarre/pkg/kubernetes/gen/clientset/versioned"
-	slothclientsetfake "github.com/alexandreLamarre/pkg/kubernetes/gen/clientset/versioned/fake"
+	"github.com/alexandreLamarre/sloth/core/log"
+	slothv1 "github.com/alexandreLamarre/sloth/pkg/kubernetes/api/sloth/v1"
+	slothclientset "github.com/alexandreLamarre/sloth/pkg/kubernetes/gen/clientset/versioned"
+	slothclientsetfake "github.com/alexandreLamarre/sloth/pkg/kubernetes/gen/clientset/versioned/fake"
 )
 
 type KubernetesService struct {

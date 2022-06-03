@@ -11,8 +11,8 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/alexandreLamarre/core/log"
-	alertwindowsv1 "github.com/alexandreLamarre/pkg/prometheus/alertwindows/v1"
+	"github.com/alexandreLamarre/sloth/core/log"
+	alertwindowsv1 "github.com/alexandreLamarre/sloth/pkg/prometheus/alertwindows/v1"
 )
 
 var (

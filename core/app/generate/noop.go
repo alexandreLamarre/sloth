@@ -3,9 +3,9 @@ package generate
 import (
 	"context"
 
-	"github.com/alexandreLamarre/core/alert"
-	"github.com/alexandreLamarre/core/info"
-	"github.com/alexandreLamarre/core/prometheus"
+	"github.com/alexandreLamarre/sloth/core/alert"
+	"github.com/alexandreLamarre/sloth/core/info"
+	"github.com/alexandreLamarre/sloth/core/prometheus"
 	"github.com/prometheus/prometheus/model/rulefmt"
 )
 

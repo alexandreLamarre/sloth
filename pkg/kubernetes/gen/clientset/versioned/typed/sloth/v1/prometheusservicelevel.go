@@ -6,8 +6,8 @@ import (
 	"context"
 	"time"
 
-	v1 "github.com/alexandreLamarre/pkg/kubernetes/api/sloth/v1"
-	scheme "github.com/alexandreLamarre/pkg/kubernetes/gen/clientset/versioned/scheme"
+	v1 "github.com/alexandreLamarre/sloth/pkg/kubernetes/api/sloth/v1"
+	scheme "github.com/alexandreLamarre/sloth/pkg/kubernetes/gen/clientset/versioned/scheme"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

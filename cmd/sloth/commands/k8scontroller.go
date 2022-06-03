@@ -30,14 +30,14 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/util/homedir"
 
-	"github.com/alexandreLamarre/core/alert"
-	"github.com/alexandreLamarre/core/app/generate"
-	"github.com/alexandreLamarre/core/app/kubecontroller"
-	"github.com/alexandreLamarre/core/k8sprometheus"
-	"github.com/alexandreLamarre/core/log"
-	"github.com/alexandreLamarre/core/prometheus"
-	slothv1 "github.com/alexandreLamarre/pkg/kubernetes/api/sloth/v1"
-	slothclientset "github.com/alexandreLamarre/pkg/kubernetes/gen/clientset/versioned"
+	"github.com/alexandreLamarre/sloth/core/alert"
+	"github.com/alexandreLamarre/sloth/core/app/generate"
+	"github.com/alexandreLamarre/sloth/core/app/kubecontroller"
+	"github.com/alexandreLamarre/sloth/core/k8sprometheus"
+	"github.com/alexandreLamarre/sloth/core/log"
+	"github.com/alexandreLamarre/sloth/core/prometheus"
+	slothv1 "github.com/alexandreLamarre/sloth/pkg/kubernetes/api/sloth/v1"
+	slothclientset "github.com/alexandreLamarre/sloth/pkg/kubernetes/gen/clientset/versioned"
 )
 
 var controllerModes = []string{controllerModeDefault, controllerModeDryRun, controllerModeFake}

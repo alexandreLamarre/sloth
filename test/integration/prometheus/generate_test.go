@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/alexandreLamarre/test/integration/prometheus"
-	"github.com/alexandreLamarre/test/integration/testutils"
+	"github.com/alexandreLamarre/sloth/test/integration/prometheus"
+	"github.com/alexandreLamarre/sloth/test/integration/testutils"
 )
 
 type expecteOutLoader struct {

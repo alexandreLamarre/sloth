@@ -12,9 +12,9 @@ import (
 	"github.com/traefik/yaegi/interp"
 	"github.com/traefik/yaegi/stdlib"
 
-	"github.com/alexandreLamarre/core/log"
-	"github.com/alexandreLamarre/pkg/prometheus/plugin/v1"
-	pluginv1 "github.com/alexandreLamarre/pkg/prometheus/plugin/v1"
+	"github.com/alexandreLamarre/sloth/core/log"
+	"github.com/alexandreLamarre/sloth/pkg/prometheus/plugin/v1"
+	pluginv1 "github.com/alexandreLamarre/sloth/pkg/prometheus/plugin/v1"
 )
 
 // FileManager knows how to manage files.
