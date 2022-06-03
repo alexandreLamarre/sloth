@@ -95,7 +95,7 @@ func rawSLIRecordGenerator(slo SLO, window time.Duration, alerts alert.MWMBAlert
 	return &rulefmt.Rule{
 		Record: slo.GetSLIErrorMetric(window),
 		Expr:   b.String(),
-		Labels: mergeLabels(
+		Labels: MergeLabels(
 			slo.GetSLOIDPromLabels(),
 			map[string]string{
 				sloWindowLabelName: strWindow,
@@ -131,7 +131,7 @@ func eventsSLIRecordGenerator(slo SLO, window time.Duration, alerts alert.MWMBAl
 	return &rulefmt.Rule{
 		Record: slo.GetSLIErrorMetric(window),
 		Expr:   b.String(),
-		Labels: mergeLabels(
+		Labels: MergeLabels(
 			slo.GetSLOIDPromLabels(),
 			map[string]string{
 				sloWindowLabelName: strWindow,
@@ -186,7 +186,7 @@ count_over_time({{.metric}}{{.filter}}[{{.window}}])
 	return &rulefmt.Rule{
 		Record: slo.GetSLIErrorMetric(window),
 		Expr:   b.String(),
-		Labels: mergeLabels(
+		Labels: MergeLabels(
 			slo.GetSLOIDPromLabels(),
 			map[string]string{
 				sloWindowLabelName: strWindow,
@@ -203,7 +203,7 @@ type metadataRecordingRulesGenerator bool
 const MetadataRecordingRulesGenerator = metadataRecordingRulesGenerator(false)
 
 func (m metadataRecordingRulesGenerator) GenerateMetadataRecordingRules(ctx context.Context, info info.Info, slo SLO, alerts alert.MWMBAlertGroup) ([]rulefmt.Rule, error) {
-	labels := mergeLabels(slo.GetSLOIDPromLabels(), slo.Labels)
+	labels := MergeLabels(slo.GetSLOIDPromLabels(), slo.Labels)
 
 	// Metatada Recordings.
 	const (
@@ -293,7 +293,7 @@ func (m metadataRecordingRulesGenerator) GenerateMetadataRecordingRules(ctx cont
 		{
 			Record: metricSLOInfo,
 			Expr:   `vector(1)`,
-			Labels: mergeLabels(labels, map[string]string{
+			Labels: MergeLabels(labels, map[string]string{
 				sloVersionLabelName:   info.Version,
 				sloModeLabelName:      string(info.Mode),
 				sloSpecLabelName:      info.Spec,

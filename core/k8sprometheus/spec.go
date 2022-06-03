@@ -100,7 +100,7 @@ func mapSpecToModel(ctx context.Context, defaultWindowPeriod time.Duration, plug
 			Service:         spec.Service,
 			TimeWindow:      defaultWindowPeriod,
 			Objective:       specSLO.Objective,
-			Labels:          mergeLabels(spec.Labels, specSLO.Labels),
+			Labels:          MergeLabels(spec.Labels, specSLO.Labels),
 			PageAlertMeta:   prometheus.AlertMeta{Disable: true},
 			TicketAlertMeta: prometheus.AlertMeta{Disable: true},
 		}
@@ -145,16 +145,16 @@ func mapSpecToModel(ctx context.Context, defaultWindowPeriod time.Duration, plug
 		if !specSLO.Alerting.PageAlert.Disable {
 			slo.PageAlertMeta = prometheus.AlertMeta{
 				Name:        specSLO.Alerting.Name,
-				Labels:      mergeLabels(specSLO.Alerting.Labels, specSLO.Alerting.PageAlert.Labels),
-				Annotations: mergeLabels(specSLO.Alerting.Annotations, specSLO.Alerting.PageAlert.Annotations),
+				Labels:      MergeLabels(specSLO.Alerting.Labels, specSLO.Alerting.PageAlert.Labels),
+				Annotations: MergeLabels(specSLO.Alerting.Annotations, specSLO.Alerting.PageAlert.Annotations),
 			}
 		}
 
 		if !specSLO.Alerting.TicketAlert.Disable {
 			slo.TicketAlertMeta = prometheus.AlertMeta{
 				Name:        specSLO.Alerting.Name,
-				Labels:      mergeLabels(specSLO.Alerting.Labels, specSLO.Alerting.TicketAlert.Labels),
-				Annotations: mergeLabels(specSLO.Alerting.Annotations, specSLO.Alerting.TicketAlert.Annotations),
+				Labels:      MergeLabels(specSLO.Alerting.Labels, specSLO.Alerting.TicketAlert.Labels),
+				Annotations: MergeLabels(specSLO.Alerting.Annotations, specSLO.Alerting.TicketAlert.Annotations),
 			}
 		}
 

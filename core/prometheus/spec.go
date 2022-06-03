@@ -75,7 +75,7 @@ func (y YAMLSpecLoader) mapSpecToModel(ctx context.Context, spec prometheusv1.Sp
 			Service:         spec.Service,
 			TimeWindow:      y.windowPeriod,
 			Objective:       specSLO.Objective,
-			Labels:          mergeLabels(spec.Labels, specSLO.Labels),
+			Labels:          MergeLabels(spec.Labels, specSLO.Labels),
 			PageAlertMeta:   AlertMeta{Disable: true},
 			TicketAlertMeta: AlertMeta{Disable: true},
 		}
@@ -120,16 +120,16 @@ func (y YAMLSpecLoader) mapSpecToModel(ctx context.Context, spec prometheusv1.Sp
 		if !specSLO.Alerting.PageAlert.Disable {
 			slo.PageAlertMeta = AlertMeta{
 				Name:        specSLO.Alerting.Name,
-				Labels:      mergeLabels(specSLO.Alerting.Labels, specSLO.Alerting.PageAlert.Labels),
-				Annotations: mergeLabels(specSLO.Alerting.Annotations, specSLO.Alerting.PageAlert.Annotations),
+				Labels:      MergeLabels(specSLO.Alerting.Labels, specSLO.Alerting.PageAlert.Labels),
+				Annotations: MergeLabels(specSLO.Alerting.Annotations, specSLO.Alerting.PageAlert.Annotations),
 			}
 		}
 
 		if !specSLO.Alerting.TicketAlert.Disable {
 			slo.TicketAlertMeta = AlertMeta{
 				Name:        specSLO.Alerting.Name,
-				Labels:      mergeLabels(specSLO.Alerting.Labels, specSLO.Alerting.TicketAlert.Labels),
-				Annotations: mergeLabels(specSLO.Alerting.Annotations, specSLO.Alerting.TicketAlert.Annotations),
+				Labels:      MergeLabels(specSLO.Alerting.Labels, specSLO.Alerting.TicketAlert.Labels),
+				Annotations: MergeLabels(specSLO.Alerting.Annotations, specSLO.Alerting.TicketAlert.Annotations),
 			}
 		}
 

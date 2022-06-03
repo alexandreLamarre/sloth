@@ -9,7 +9,7 @@ import (
 	"github.com/slok/sloth/core/alert"
 )
 
-func mergeLabels(ms ...map[string]string) map[string]string {
+func MergeLabels(ms ...map[string]string) map[string]string {
 	res := map[string]string{}
 	for _, m := range ms {
 		for k, v := range m {
