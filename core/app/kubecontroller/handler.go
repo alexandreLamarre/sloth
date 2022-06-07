@@ -49,7 +49,7 @@ type HandlerConfig struct {
 	Logger             log.Logger
 }
 
-func (c *HandlerConfig) defaults() error {
+func (c *HandlerConfig) Defaults() error {
 	if c.Generator == nil {
 		return fmt.Errorf("generator is required")
 	}
@@ -93,7 +93,7 @@ type handler struct {
 }
 
 func NewHandler(config HandlerConfig) (controller.Handler, error) {
-	err := config.defaults()
+	err := config.Defaults()
 	if err != nil {
 		return nil, fmt.Errorf("invalid configuration: %w", err)
 	}
@@ -111,7 +111,7 @@ func NewHandler(config HandlerConfig) (controller.Handler, error) {
 func (h handler) Handle(ctx context.Context, obj runtime.Object) error {
 	switch v := obj.(type) {
 	case *slothv1.PrometheusServiceLevel:
-		return h.handlePrometheusServiceLevelV1(ctx, v)
+		return h.HandlePrometheusServiceLevelV1(ctx, v)
 	default:
 		h.logger.Warningf("Unsuported Kubernetes object type: %s", obj.GetObjectKind())
 	}
@@ -119,11 +119,11 @@ func (h handler) Handle(ctx context.Context, obj runtime.Object) error {
 	return nil
 }
 
-func (h handler) handlePrometheusServiceLevelV1(ctx context.Context, psl *slothv1.PrometheusServiceLevel) (err error) {
+func (h handler) HandlePrometheusServiceLevelV1(ctx context.Context, psl *slothv1.PrometheusServiceLevel) (err error) {
 	ctx = h.logger.SetValuesOnCtx(ctx, log.Kv{"ns": psl.Namespace, "name": psl.Name})
 	logger := h.logger.WithCtxValues(ctx)
 
-	ignoreReason, ignore := h.ignoreHandlePrometheusServiceLevelV1(ctx, psl)
+	ignoreReason, ignore := h.IgnoreHandlePrometheusServiceLevelV1(ctx, psl)
 	if ignore {
 		logger.Debugf("Ignoring object due to %q", ignoreReason)
 		return nil
@@ -175,7 +175,7 @@ func (h handler) handlePrometheusServiceLevelV1(ctx context.Context, psl *slothv
 	return nil
 }
 
-func (h handler) ignoreHandlePrometheusServiceLevelV1(ctx context.Context, psl *slothv1.PrometheusServiceLevel) (reason string, ignore bool) {
+func (h handler) IgnoreHandlePrometheusServiceLevelV1(ctx context.Context, psl *slothv1.PrometheusServiceLevel) (reason string, ignore bool) {
 	// If the received object is being deleted, ignore.
 	deleteInProgress := !psl.DeletionTimestamp.IsZero()
 	if deleteInProgress {

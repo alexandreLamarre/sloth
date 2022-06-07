@@ -12,22 +12,22 @@ import (
 )
 
 // genFunc knows how to generate an SLI recording rule for a specific time window.
-type alertGenFunc func(slo SLO, sloAlert AlertMeta, quick, slow alert.MWMBAlert) (*rulefmt.Rule, error)
+type AlertGenFunc func(slo SLO, sloAlert AlertMeta, quick, slow alert.MWMBAlert) (*rulefmt.Rule, error)
 
 type sloAlertRulesGenerator struct {
-	alertGenFunc alertGenFunc
+	AlertGenFunc AlertGenFunc
 }
 
-// SLOAlertRulesGenerator knows how to generate the SLO prometheus alert rules
+// SloAlertRulesGenerator knows how to generate the SLO prometheus alert rules
 // from an SLO.
-var SLOAlertRulesGenerator = sloAlertRulesGenerator{alertGenFunc: defaultSLOAlertGenerator}
+var SLOAlertRulesGenerator = sloAlertRulesGenerator{AlertGenFunc: DefaultSLOAlertGenerator}
 
 func (s sloAlertRulesGenerator) GenerateSLOAlertRules(ctx context.Context, slo SLO, alerts alert.MWMBAlertGroup) ([]rulefmt.Rule, error) {
 	rules := []rulefmt.Rule{}
 
 	// Generate Page alerts.
 	if !slo.PageAlertMeta.Disable {
-		rule, err := s.alertGenFunc(slo, slo.PageAlertMeta, alerts.PageQuick, alerts.PageSlow)
+		rule, err := s.AlertGenFunc(slo, slo.PageAlertMeta, alerts.PageQuick, alerts.PageSlow)
 		if err != nil {
 			return nil, fmt.Errorf("could not create page alert: %w", err)
 		}
@@ -37,7 +37,7 @@ func (s sloAlertRulesGenerator) GenerateSLOAlertRules(ctx context.Context, slo S
 
 	// Generate Ticket alerts.
 	if !slo.TicketAlertMeta.Disable {
-		rule, err := s.alertGenFunc(slo, slo.TicketAlertMeta, alerts.TicketQuick, alerts.TicketSlow)
+		rule, err := s.AlertGenFunc(slo, slo.TicketAlertMeta, alerts.TicketQuick, alerts.TicketSlow)
 		if err != nil {
 			return nil, fmt.Errorf("could not create ticket alert: %w", err)
 		}
@@ -48,7 +48,7 @@ func (s sloAlertRulesGenerator) GenerateSLOAlertRules(ctx context.Context, slo S
 	return rules, nil
 }
 
-func defaultSLOAlertGenerator(slo SLO, sloAlert AlertMeta, quick, slow alert.MWMBAlert) (*rulefmt.Rule, error) {
+func DefaultSLOAlertGenerator(slo SLO, sloAlert AlertMeta, quick, slow alert.MWMBAlert) (*rulefmt.Rule, error) {
 	// Generate the filter labels based on the SLO ids.
 	metricFilter := labelsToPromFilter(slo.GetSLOIDPromLabels())
 

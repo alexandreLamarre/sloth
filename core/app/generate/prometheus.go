@@ -21,7 +21,7 @@ type ServiceConfig struct {
 	Logger                      log.Logger
 }
 
-func (c *ServiceConfig) defaults() error {
+func (c *ServiceConfig) Defaults() error {
 	if c.AlertGenerator == nil {
 		return fmt.Errorf("alert generator is required")
 	}
@@ -77,7 +77,7 @@ type Service struct {
 
 // NewService returns a new Prometheus application service.
 func NewService(config ServiceConfig) (*Service, error) {
-	err := config.defaults()
+	err := config.Defaults()
 	if err != nil {
 		return nil, fmt.Errorf("invalid configuration: %w", err)
 	}

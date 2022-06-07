@@ -99,21 +99,21 @@ func (w Windows) Validate() error {
 // Error budget speeds based on a full time window, however once we have the factor (speed)
 // the value can be used with any time window.
 func (w Windows) GetSpeedPageQuick() float64 {
-	return w.getBurnRateFactor(w.SLOPeriod, float64(w.PageQuick.ErrorBudgetPercent), w.PageQuick.LongWindow)
+	return w.GetBurnRateFactor(w.SLOPeriod, float64(w.PageQuick.ErrorBudgetPercent), w.PageQuick.LongWindow)
 }
 func (w Windows) GetSpeedPageSlow() float64 {
-	return w.getBurnRateFactor(w.SLOPeriod, float64(w.PageSlow.ErrorBudgetPercent), w.PageSlow.LongWindow)
+	return w.GetBurnRateFactor(w.SLOPeriod, float64(w.PageSlow.ErrorBudgetPercent), w.PageSlow.LongWindow)
 }
 func (w Windows) GetSpeedTicketQuick() float64 {
-	return w.getBurnRateFactor(w.SLOPeriod, float64(w.TicketQuick.ErrorBudgetPercent), w.TicketQuick.LongWindow)
+	return w.GetBurnRateFactor(w.SLOPeriod, float64(w.TicketQuick.ErrorBudgetPercent), w.TicketQuick.LongWindow)
 }
 func (w Windows) GetSpeedTicketSlow() float64 {
-	return w.getBurnRateFactor(w.SLOPeriod, float64(w.TicketSlow.ErrorBudgetPercent), w.TicketSlow.LongWindow)
+	return w.GetBurnRateFactor(w.SLOPeriod, float64(w.TicketSlow.ErrorBudgetPercent), w.TicketSlow.LongWindow)
 }
 
 // getBurnRateFactor calculates the burnRateFactor (speed) needed to consume all the error budget available percent
 // in a specific time window taking into account the total time window.
-func (w Windows) getBurnRateFactor(totalWindow time.Duration, errorBudgetPercent float64, consumptionWindow time.Duration) float64 {
+func (w Windows) GetBurnRateFactor(totalWindow time.Duration, errorBudgetPercent float64, consumptionWindow time.Duration) float64 {
 	// First get the total hours required to consume the % of the error budget in the total window.
 	hoursRequiredConsumption := errorBudgetPercent * totalWindow.Hours() / 100
 
